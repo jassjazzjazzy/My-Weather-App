@@ -11,14 +11,18 @@
 </head>
 <body><div class="app">
     <header>
-        <form class="search-form">
-            <input type="search" placeholder="Enter city..." required class="search-form-input"/>
+        <form class="search-form" id="search-form">
+            <input type="search" placeholder="Enter city..." 
+            required 
+            id="search-form-input"
+            class="search-form-input"/>
+        
             <input type="submit" value="Search" class="search-form-button"/>
         </form>
     </header>
     <main> <div class="weather-app-data"> 
         <div>
-        <h1 class="weather-app-city">Houston</h1>
+        <h1 class="weather-app-city" id="weather-app-city">Houston</h1>
         
         <p class="weather-app-details">Tuesday 14:49, scattered clouds
             <br/>
@@ -39,6 +43,6 @@
        <a href="https://jasmineweatherapp.netlify.app/" target="_blank">Netlify</a>, and open-sourced on
         <a href="https://github.com/jassjazzjazzy/My-Weather-App.git" target="_blank"> Github</a>
      </footer></div>
-    
+    <script src="src/index.js"></script>
 </body>
 </html>
