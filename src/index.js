@@ -18,6 +18,7 @@ cityElement.innerHTML = response.data.city;
 descriptionElement.innerHTML= response.data.condition.description;
  temperatureElement.innerHTML = Math.round(temperature);
 
+getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -50,7 +51,18 @@ let searchInput = document.querySelector("#search-form-input");
 searchCity(searchInput.value);
 }
 
-function displayForecast() {
+
+
+function getForecast(city) {
+let apiKey = "t6483ea502089504eb2ccb3fob3003f0";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}&units=metric`;
+axios(apiUrl).then(displayForecast);
+}
+
+
+
+
+function displayForecast(response) {
   let days = ["Tu", "We", "Th", "Fr", "Sa", "Su"];
   let forecastHtml = "";
 
@@ -79,6 +91,7 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Houston");
-displayForecast();
+
+
 
 
